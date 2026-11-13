@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Elvandra Sebastiano</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo-container">
+                <img src="assets/logo smk.jpeg" alt="Logo SMK" class="nav-logo-img">
+                <div class="logo-text">Elvandra<span>.dev</span></div>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">&#9776;</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-btn" title="Ganti Tema">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge-welcome">👋 Selamat Datang di Portofolio Saya</span>
+            <h1>Halo, Saya <span class="gradient-text">Elvandra Sebastiano</span></h1>
+            <p class="typing-container">Saya seorang pelajar dari SMKN 1 Blitar <span id="typingText" class="typing-text"></span></p>
+            <p class="hero-desc">Membangun solusi digital yang responsif, pengelolaan basis data yang terstruktur, serta infrastruktur jaringan yang andal.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-container">
+            <!-- Foto Profil (.jpeg) -->
+            <div class="about-profile-wrapper">
+                <img src="assets/profil.jpeg" alt="Profil Elvandra Sebastiano" class="about-profile-img">
+            </div>
+
+            <div class="about-card">
+                <p>Saya adalah siswa Kelas 11 di SMK yang mendalami bidang <strong>Computer & Network Engineering</strong> serta <strong>Pengembangan Perangkat Lunak</strong>. Saya senang memecahkan masalah teknis mulai dari merancang antarmuka web modern, mengelola database SQL, hingga mengonfigurasi topologi jaringan.</p>
+                
+                <!-- Riwayat Pendidikan -->
+                <div class="edu-wrapper">
+                    <h3>Riwayat Pendidikan:</h3>
+                    <ul class="edu-list">
+                        <li>🎓 <strong>TK Al-Hidayah</strong></li>
+                        <li>🏫 <strong>SDN Kepanjen Kidul 2</strong></li>
+                        <li>🏫 <strong>SMPN 8 Blitar</strong></li>
+                        <li>🏫 <strong>SMKN 1 Blitar</strong> (Kelas 11 TKJ / PPLG)</li>
+                    </ul>
+                </div>
+
+                <div class="skills-wrapper">
+                    <h3>Keahlian & Teknologi:</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">HTML5 & CSS3</span>
+                        <span class="skill-badge">JavaScript (ES6)</span>
+                        <span class="skill-badge">SQL Database</span>
+                        <span class="skill-badge">Cisco Packet Tracer</span>
+                        <span class="skill-badge">Subnetting & Routing</span>
+                        <span class="skill-badge">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Proyek Pilihan</h2>
+        
+        <!-- Tombol Filter Kategori -->
+        <div class="filter-buttons" id="filterButtons">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="Kereatifitas inovativ Kewirausahaan">Kereatifitas Inovativ Kewirausahaan</button>
+            <button class="filter-btn" data-filter="Jaringan">Jaringan</button>
+            <button class="filter-btn" data-filter="Database">Database</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+            <!-- Card proyek akan dirender otomatis melalui JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <p class="contact-subtitle">Tertarik berkolaborasi atau memiliki pertanyaan? Kirim pesan di bawah ini!</p>
+        <form id="contactForm" onsubmit="handleForm(event)">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Nama Lengkap Anda" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Alamat Email Anda" required>
+            </div>
+            <div class="input-group">
+                <textarea id="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pesan 🚀</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Elvandra Sebastiano</strong>. Dibuat dengan semangat untuk tugas PPLG.</p>
+    </footer>
+
+    <!-- Pemutar Musik Melayang (Floating Audio Player) -->
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="assets/lagu.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+        <button id="musicBtn" class="music-btn" title="Putar / Jeda Musik">
+            🎵 <span id="musicText">Putar Musik</span>
+        </button>
+    </div>
+
+    <!-- Script JavaScript Terintegrasi -->
+    <script>
+        // 1. Toggle Hamburger Menu untuk Mobile
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 2. Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                darkModeToggle.textContent = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                darkModeToggle.textContent = '☀️';
+            }
+        });
+
+        // 3. Typing Effect
+        const roles = [
+            "Junior Web Developer",
+            "Network Engineering Student",
+            "Database Enthusiast"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        document.addEventListener('DOMContentLoaded', typeEffect);
+
+        // 4. Data Proyek Pilihan
+        const projects = [
+            {
+                title: "Konfigurasi Jaringan",
+                tag: "Jaringan",
+                img: "assets/packet-tracer-screenshot.avif",
+                desc: "Perancangan topologi jaringan komputer, pengaturan router dan switch, serta implementasi routing statis dan dinamis."
+            },
+            {
+                title: "Pembuatan Proyek AMBALOT",
+                tag: "Kereatifitas inovativ Kewirausahaan",
+                img: "assets/AMBALOT.jpeg",
+                desc: "Pengembangan sistem aplikasi kreatif AMBALOT dengan rasa khas Nusantara."
+            },
+            {
+                title: "Pengembangan Web Kassir Digital",
+                tag: "Database",
+                img: "assets/OIP.jpg",
+                desc: "Pembuatan aplikasi kasir berbasis web yang dilengkapi manajemen data transaksi dan pengelolaan item terstruktur."
+            }
+        ];
+
+        const grid = document.getElementById('projectGrid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        function renderProjects(category = 'all') {
+            grid.innerHTML = '';
+            
+            const filtered = category === 'all' 
+                ? projects 
+                : projects.filter(p => p.tag === category);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.classList.add('project-card');
+                card.innerHTML = `
+                    <div class="project-img-wrapper">
+                        <img src="${p.img}" alt="${p.title}" onerror="this.src='https://placehold.co/600x400/1e293b/38bdf8?text=${encodeURIComponent(p.title)}'">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">${p.tag}</span>
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        renderProjects();
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderProjects(btn.getAttribute('data-filter'));
+            });
+        });
+
+        // 5. Contact Form Handler
+        function handleForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Terima kasih, ${name}! Pesan Anda untuk Elvandra Sebastiano telah terkirim.`);
+            document.getElementById('contactForm').reset();
+        }
+
+        // 6. Kontrol Pemutar Musik Latar
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicText = document.getElementById('musicText');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicText.textContent = 'Putar Musik';
+                musicBtn.classList.remove('playing');
+            } else {
+                bgMusic.play();
+                musicText.textContent = 'Jeda Musik';
+                musicBtn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
